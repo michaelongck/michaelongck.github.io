@@ -1,0 +1,69 @@
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vw;
+  margin: 0 auto;
+}
+main section {
+  width: 10%;
+  margin: 0;
+  /*flex grow may alter aspect ratio depending on images */
+  flex-grow: 1;
+}
+main section a {
+  text-decoration: none;
+}
+main section a figure {
+  margin: 0;
+}
+main section a figure img {
+  width: 100%;
+}
+main section a figure figcaption {
+  color: black;
+}
+main section article {
+  width: 0;
+  height: 0;
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  padding: 0;
+  z-index: 3;
+  text-align: center;
+  background: white;
+}
+main section article figure img {
+  width: 100%;
+}
+main section article a.close {
+  z-index: 4;
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /* internet explorer */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+  /*IE8*/
+}
+main section article:target {
+  width: auto;
+  height: auto;
+  bottom: 0px;
+  right: 0px;
+  padding: 7% 10% 0 10%;
+  overflow: scroll;
+}
+main section article:target a.close {
+  opacity: 1;
+  filter: alpha(opacity=99);
+  /* internet explorer */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)";
+  /*IE8*/
+}
