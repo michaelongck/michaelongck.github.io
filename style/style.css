@@ -110,7 +110,7 @@ main section article:target a.close {
 
 @media (max-width: 500px) {
   main {
-    height: 730vh;
+    height: 1330vh;
   }
   main section {
     width: 50%;
