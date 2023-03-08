@@ -110,7 +110,7 @@ main section article:target a.close {
 
 @media (max-width: 500px) {
   main {
-    height: 1000vh;
+    height: 2000vh;
   }
   main section {
     width: 50%;
@@ -118,6 +118,6 @@ main section article:target a.close {
   }
 
   .modal-prev, .modal-next {
-    top: 90vh;
+    top: 80vh;
   }
 }
