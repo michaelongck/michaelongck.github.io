@@ -1,0 +1,1133 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Geologica:wght@100..900&display=swap');
+
+/*** MIXINS ***/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+  position: relative; // Ensure the positioning context
+}
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin animation($animation...) {
+       -o-animation: $animation;
+     -moz-animation: $animation;
+  -webkit-animation: $animation;
+          animation: $animation;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+//Color
+$col-text:#222;
+$col-card: #f4f4f4;
+$col-lastyear: #111;
+$col-firstyear: #f1f1f1;
+$col-highlight:rgb(255, 97, 26);
+body{
+  background:$col-firstyear;
+  font-family: "Anonymous Pro", serif;
+  font-family: "Geologica", sans-serif;
+  padding:3vw 3vw;
+  background: darken($col-card,6%);
+}
+
+a{
+  color:black;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+header{
+  font-weight: 200;
+padding: 0 2vw;
+}
+
+.card-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  max-width:1600px;
+  margin:0 auto;
+  
+}
+
+.card {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(7, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+height:60vw;
+position:relative;
+margin:2vw;
+  flex:30%;
+   overflow:hidden;
+  box-shadow: 0.2vw 0.2vw 0.3vw lightgray;
+  font-size:1.3vw;
+  font-family: "Anonymous Pro", serif;
+  background: $col-card;
+
+h2 { 
+  grid-area: 1 / 1 / 2 / 5; 
+  padding-top:5vw;
+  z-index:1;
+  margin:0;
+  padding:5vw 35px 0 1.5vw;
+  border-bottom:0.5px dashed $col-text;
+  background: $col-card;
+  font-family: "Geologica", sans-serif;
+  text-transform: uppercase;
+  font-size:2.5vw;
+  width:calc(100% - 33px);
+}
+
+p { 
+grid-area: 2 / 1 / 3 / 5; 
+  margin:0;
+  padding:0.5vw 5vw 1vw 1.5vw;
+    border-bottom:0.5px dashed $col-text;
+  font-family: "Geologica", sans-serif;
+  font-weight:200;
+}
+.tabs { 
+    grid-area: 3 / 1 / 7 / 5; 
+    overflow:scroll;
+height:120%;
+  padding:0 3vw 1vw 0;
+  position:relative;
+  overscroll-behavior: none;
+  .tab-content{
+    padding-right:1vw;
+      table{
+     padding:0;
+    margin: 30px 0.5vw 30px 1.5vw; 
+        
+  }//table
+  }//.tab-content
+    input[type="radio"] {
+    opacity:0;
+      width:0;
+      height:0;
+      position: absolute;
+  }
+  .tab-label{
+    border-bottom:0.5px dashed $col-text;
+    padding:0.9vw 0 1vw 1.5vw;
+    margin-top:0;
+    position:sticky;
+   top:0;
+    background: $col-card;
+    z-index:2;
+    label{
+      margin:0 2vw 0 0;
+      position: relative;
+      &:before{
+        content:"";
+        width:1.1vw;
+        height:1.1vw;
+        display:inline-block;
+        margin-right:0.7vw;
+        margin-bottom: -0.2vw;
+        border:1px dashed $col-text;
+      }//&:before
+      &:hover{
+             font-weight:bold;
+        &:before{
+        
+                          background: linear-gradient(
+    -45deg,
+    transparent,
+    transparent 42%,
+    lighten($col-highlight,30%) 42%,
+  lighten($col-highlight,30%) 57%,
+    transparent 57%,
+    transparent 100%
+  );
+        }
+      }
+    }//label
+  }//.tabs-label
+  // Target indices 0, 1, 2, etc.
+@for $i from 0 through 5 {
+  #tab1-#{$i}:checked ~ .tab-label label[for="tab1-#{$i}"],
+  #tab2-#{$i}:checked ~ .tab-label label[for="tab2-#{$i}"],
+  #tab3-#{$i}:checked ~ .tab-label label[for="tab3-#{$i}"] {
+    font-weight:bold;
+            &:before{
+              border:1.5px solid $col-text;
+                 background: linear-gradient(
+    -45deg,
+    transparent,
+    transparent 42%,
+    $col-highlight 42%,
+    $col-highlight 57%,
+    transparent 57%,
+    transparent 100%
+  );
+              
+        }
+      &:hover{
+        &:before{
+          background:#f0f0f0;
+                           background: linear-gradient(
+  -45deg,
+    transparent,
+    transparent 42%,
+    lighten($col-highlight,20%) 42%,
+  lighten($col-highlight,20%) 57%,
+    transparent 57%,
+    transparent 100%
+  );
+        }
+      }
+  }
+}//@for $i from 0 through 5 
+}//.tabs
+
+/* tav navigation styling */
+.tabs > input:nth-child(1):checked ~ .tab-content{  
+/* styling content of tab 3 */
+  display: block;
+  table{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    tbody{
+      position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+    }
+     tr{
+      opacity: 0;
+       max-width:50%;
+
+      // Ensure the first child circle is visible from the start
+      &:nth-child(2){
+        opacity: 1;
+        animation: none; // Disable animation for the first child
+        .year{
+          top:-1vw;
+           &:before {
+   background:$col-firstyear;
+             
+        }
+        }
+        .extent-bar{
+          background:lighten($col-card, 10%);
+          border:0.05vw solid darken($col-card,30%);
+          z-index:1;
+          position: absolute;
+          left: 50%;
+          span{
+          }//span
+        }//.extent-bar
+      }//&:nth-child(2)
+      // Last child circle is visible from the start
+      &:last-child {
+       opacity: 1;
+      }
+   
+      .year {
+        position: absolute;
+        left: 90%;
+        top:1vw;
+        @include transform(translate(-50%, 0));
+        font-size: 1.1vw;
+        color:$col-text;
+        z-index:1;
+        font-family: "Geologica", sans-serif;
+        &:before {
+   content: '';
+  position: absolute;
+          width:1vw;
+          height:1vw;
+          border:1px solid gray;
+          margin-left:-2vw;
+          background:$col-lastyear;
+        }
+      }//.year
+      .extent-bar {
+      position: absolute;
+      left: 100%;
+      @include transform(translate(-50%, 0));
+         box-shadow: inset 10px 10px 25px 0px darken($col-card, 90%);
+     
+       
+    background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -5px 5px rgba(100, 100, 100, 0.1), inset 0 5px 5px rgba(255,255,255, 0.2), rgba(255,255,255, 0.2) 3px 3px 4px 1px inset,rgba(0,0,0, 0.3) 3px 3px 6px 1px;
+         background: $col-lastyear;
+      width:20vw;
+      padding-bottom:2vw;
+      top:calc(var(--value) * 1.5);
+       span{
+            position:absolute;
+             bottom: 0;
+            left: 50%;
+         opacity:0;
+        }
+    }//.extent-bar 
+    } //tr
+  }//table
+
+}//.tabs > input:nth-child(1):checked ~ .tab-content
+
+.tab-content{
+  input{
+  display:none;
+}//input
+  
+label {//button off
+  z-index:1;
+ margin:3.5vw 0 0 0;
+   position: absolute;
+  display: block;
+  cursor:pointer;
+position: absolute;
+    content: '';
+    width: 4vw;
+    height:4vw;
+    right:4.9vw;
+    border-radius:50%;
+  //large circle [left top blur size]
+
+ &:before{ //circle
+   content: '';
+     position: absolute;
+     width: 3.5vw;
+    height:3.5vw;
+    border-radius:50%;
+   background:
+     //small circle
+   radial-gradient(circle at center, rgba(0,0,0, 0.1) 5%, rgba(0,0,0,0.3) 11%, transparent 12%, transparent 40%, rgba(255,255,255,0.8) 90%);
+ box-shadow: 
+   //button[left top blur size]
+     rgb(255, 255, 255) 0 0.2vw 0.3vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.2vw 0.3vw 0.1vw inset,
+  rgba(0, 0, 0, 0.45) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.25) 0 1.1vw 1.5vw -0.2vw;
+
+
+  }// &:before
+  &:after{//dot
+  content: 'start';
+   top:4vw;
+     position: absolute;
+     width: 3.7vw;
+    height:3.7vw;
+    font-size:0.8vw;
+    text-align:center;
+    font-family: "Geologica", sans-serif;
+    text-transform:uppercase;
+    font-weight:100;
+  }//:after
+        &:hover{    ///button off 
+        &:before{
+             background:
+     //small circle
+   radial-gradient(circle at center, rgba(255, 97, 26,0.3) 5%, rgba(181, 61, 4,0.4) 11%, transparent 12%, transparent 40%, rgba(255,255,255,0.8) 90%);
+ box-shadow: 
+   //button[left top blur size]
+     rgb(255, 255, 255) 0 0.2vw 0.3vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.2vw 0.3vw 0.1vw inset,
+  rgba(0, 0, 0, 0.3) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.2) 0 1.1vw 1.5vw -0.2vw;
+             @include transition(all 200ms ease-in-out);  
+        }//&:before
+  }//&:hover
+  
+  
+}//label
+:checked{ //default state animation paused
+  + label { //button on
+      &:hover{
+          &:before{ //off
+   content: '';
+     position: absolute;
+   background:
+     //small circle
+   radial-gradient(circle at center, rgba(255, 97, 26,0.8) 5%, rgba(181, 61, 4,1) 11%, transparent 12%, transparent 40%, rgba(255,255,255,1) 90%);
+ box-shadow: 
+   //button[left top blur size]
+  rgb(255, 255, 255) 0 0.3vw 0.4vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.3vw 0.4vw 0.1vw inset,
+  rgba(0, 0, 0, 0.15) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.12) 0 1.1vw 1.5vw -0.2vw;
+          @include transition(all 200ms ease-in-out);    
+ }// &:before
+  }//&:hover
+&:before{ //on
+   content: '';
+     position: absolute;
+   background:
+     //small circle
+   radial-gradient(circle at center, rgba(255, 97, 26,0.8) 5%, rgba(181, 61, 4,0.8) 11%, transparent 12%, transparent 40%, rgba(255,255,255,0.8) 90%);
+ box-shadow: 
+   //button[left top blur size]
+  rgb(255, 255, 255) 0 0.3vw 0.4vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.3vw 0.4vw 0.1vw inset,
+  rgba(0, 0, 0, 0.1) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.1) 0 1.1vw 1.5vw -0.2vw;
+ 
+
+  }// &:before
+&:after { //on
+   content: 'stop';
+    }//&:after
+}//+ label 
+}//:checked
+  }//.tab-content
+
+  
+  
+//General animation styles
+$animation-duration: 0.5s; // Time each row is fully visible
+
+
+// Keyframes for fadeInOut animation
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0; // Hidden at start and end
+  }
+  0% {
+    opacity: 0; // Fully visible for a shorter duration
+  }
+  3% {
+    opacity: 1; // Fully visible at the 40% mark
+  }
+  5% {
+    opacity: 0; // Fully visible for a shorter duration
+  }
+}
+
+
+.tabs > input:nth-child(1):checked ~ .tab-content {
+  display: block;
+}
+.tabs > input:nth-child(2):checked ~ .tab-content  { /* styling content of tab 2 */
+  display: block;
+  /* Styling the extent column as bars */
+.extent-bar {
+  position: relative;
+  height: 50vh;
+  width: 100vw;  
+}
+
+/* Bar styling using ::before */
+.extent-bar::before {
+   content: '';
+  position: absolute;
+    height:90%;
+    bottom: 0;
+  left:5px;
+    width: calc(100% + 15px);
+  background-color: black;
+   clip-path: circle(3px at calc(100% - 16px) calc(100% - var(--value) + 5px));
+}
+
+.extent-bar:hover::before{
+       clip-path: circle(5px at calc(100% - 16px) calc(100% - var(--value) + 5px));
+}
+
+.extent-bar::after {
+    content: '';
+  position: absolute;
+  bottom: 0;
+  width:calc(100% + 3px) ;
+  background-color: black;
+  height: calc(90% - 5px);
+  clip-path: polygon(
+    0 calc(100% - var(--previous-value)), 
+    100% calc(100% - var(--value)), 
+    100% calc(100% - var(--value) + 1px), 
+    0 calc(100% - var(--previous-value) + 1px));
+}
+.extent-bar:hover::after{
+  clip-path: polygon(
+    0 calc(100% - var(--previous-value)), 
+    100% calc(100% - var(--value)), 
+    100% calc(100% - var(--value) + 2px), 
+    0 calc(100% - var(--previous-value) + 2px));
+}
+
+/* Style the extent value text */
+.extent-bar span {
+  position: absolute;
+  top: calc(100% - var(--value));
+  right:-0.8vw;
+  font-size: 12px;
+  opacity:0;
+}
+
+.extent-bar:hover span{
+  opacity:1;
+}
+
+
+table{
+  display:flex;
+  border-left:1px solid black;
+  border-bottom:1px solid black;
+}
+
+td.year{ /* hide years */
+  position: absolute;
+  display:none;
+  margin-top: 52vh;
+}
+td.year:before{
+     content: '';
+  position: absolute;
+  width:1px;
+  height:5px;
+  background:black;
+  margin-top:-0.4vw;
+  margin-left:1vw;
+}
+
+tr:nth-of-type(5n + 2) td.year { /* show 2nd and every 5 after years*/
+  display:block;
+}
+
+th:first-of-type{ //position of Year
+  position: absolute;
+  right: 40px;
+  margin-top: 55vh;
+}
+
+th:last-of-type{ //position of y-axis label
+  position: absolute;
+  margin-top: -21px;
+  margin-left: -2px;
+}
+
+label{
+  display:none;
+}
+  
+
+}//.tabs > input:nth-child(2):checked ~ .tab-content
+
+.tabs > input:nth-child(3):checked ~ .tab-content  { 
+  table {
+  width: 95%;
+  max-width:500px;
+  border-collapse: collapse;
+  th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}//th,td
+}//table
+  label{
+  display:none;
+}
+}//.tabs > input:nth-child(3):checked ~ .tab-content
+footer { 
+ grid-area: 7 / 1 / 8 / 3;
+position:absolute;
+  width:100%;
+height:3vw;
+  bottom:0;
+  background: $col-card;
+  border-top:0.5px dashed $col-text;
+  font-weight:200;
+  line-height:2.3;
+  z-index:3;
+  padding-top:0;
+  span{
+    padding:0.8vw 5vw 0.8vw 1.5vw;
+    &:first-of-type{
+    border-right:0.5px dashed $col-text;
+  }
+}
+}//footer
+dl.references { 
+grid-area: 1 / 2 / 8 / 3; 
+ writing-mode: vertical-rl;
+  @include transform(rotate(180deg));
+  width:3vw;
+  height:60vw;
+  position:absolute;
+  right:0;
+  bottom:0;
+  border-right:0.5px dashed $col-text;
+  background: $col-card;
+  padding: calc(3vw - 0.5px) 0 0 0;
+  line-height:2;
+  display:flex;
+  margin: 0;
+  z-index:3;
+  dt{
+    border-top:0.5px dashed $col-text;
+    margin:0 0 1vw 0;
+    padding-top:2vw;
+  }
+  dd{
+    margin:0 0 1.5vw 0;
+    &:first-of-type{
+      padding:0 0 1.5vw 0;
+    }
+    a{
+      color:$col-text;
+      text-decoration-style: dotted;
+      text-decoration-thickness: 1px;
+      &:hover{
+        text-decoration-style: solid;
+        font-style:italic;
+      }
+    }
+  }
+}
+
+        &:nth-child(1){ //co2 emissions
+
+   .tabs > input:nth-child(1):checked ~ .tab-content{  
+  display: block;
+     $numYears: 35 + 1; // Total number of rows/children
+ $full-animation-duration: $animation-duration * $numYears; // Total duration of the animation    
+// Apply animation to table rows
+#replayButton-0:checked ~ table tr {
+  opacity: 0; // Default state: hidden
+  animation: fadeInOut #{$full-animation-duration} linear infinite; // Apply full duration for the entire sequence
+  animation-fill-mode: forwards; // Hold the final state (opacity: 0)
+  
+  // Ensure the first child is hidden by default (no animation)
+  &:nth-child(1) {
+    display: none; // Do not display the first child
+  }
+  // Ensure the second child is always visible from the start
+  &:nth-child(2) {
+    opacity: 1;
+    animation: none; // Disable animation for the second child
+  }
+    // Apply animations to other rows with staggered delays
+  @for $i from 2 through $numYears {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$animation-duration * ($i - 2)}; // Stagger the delays
+    }
+  }
+  } 
+  table tr{
+            // Ensure the first child is visible from the start
+      &:nth-child(2) {
+        .extent-bar{
+  background:$col-firstyear;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+          border:0.05vw solid black;
+          span{
+            color:$col-text;
+          }//span
+        }//.extent-bar
+      }//&:nth-child(2)
+      // Last child circle is visible from the start
+      .extent-bar {
+      position: absolute;
+        width: calc(var(--value) * 0.5);
+padding-bottom: calc(var(--value) * 0.5);
+        top:calc(var(--value) * 0.7);
+        left:50%;
+       span{
+            position:absolute;
+             bottom: 0;
+            left: 50%;
+         opacity:0;
+        }
+    }//.extent-bar 
+  }//table
+
+}//.tabs > input:nth-child(1):checked ~ .tab-content
+  }//&:nth-child(1) card
+  
+    &:nth-child(2){ //temperature rise
+    .tabs > input:nth-child(1):checked ~ .tab-content{  
+/* styling content of tab 3 */
+  display: block;
+      $numYears: 64 + 1; // Total number of rows/children
+$full-animation-duration: $animation-duration * $numYears; // Total duration of the animation
+// Apply animation to table rows
+#replayButton-1:checked ~ table tr {
+  opacity: 0; // Default state: hidden
+  animation: fadeInOut #{$full-animation-duration} linear infinite; // Apply full duration for the entire sequence
+  animation-fill-mode: forwards; // Hold the final state (opacity: 0)
+  
+  // Ensure the first child is hidden by default (no animation)
+  &:nth-child(1) {
+    display: none; // Do not display the first child
+  }
+
+  // Ensure the second child is always visible from the start
+  &:nth-child(2) {
+    opacity: 1;
+    animation: none; // Disable animation for the second child
+  }
+    // Apply animations to other rows with staggered delays
+  @for $i from 3 through $numYears {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$animation-duration * ($i - 2)}; // Stagger the delays
+    }
+  }
+  } 
+  table{
+        &:before{
+  position: absolute;
+content: "";
+border-left: 1px solid black;
+width: 5vw;
+height: 30vw;
+top: 1vw;
+left:50%;
+    }//before
+
+     tr{
+            // Ensure the first child is visible from the start
+      &:nth-child(2) {
+        .extent-bar {
+    
+        }
+      }//&:nth-child(2)
+      // Last child circle is visible from the start
+      &:last-child {
+       opacity: 1;
+      }
+      .extent-bar {
+      width:2vw;
+      top: calc(var(--value) * -2.7 + 29vw);
+      left:50%;
+        border-radius:50%;
+        
+    }//.extent-bar 
+    } //tr
+  }//table
+
+}//.tabs > input:nth-child(1):checked ~ .tab-content
+  }//&:nth-child(2) card  
+
+  &:nth-child(3){ //sea ice loss
+   .tabs > input:nth-child(1):checked ~ .tab-content{  
+/* styling content of tab 3 */
+  display: block;
+     $numYears: 43 + 1; // Total number of rows/children
+$full-animation-duration: $animation-duration * $numYears; // Total duration of the animation
+// Apply animation to table rows
+#replayButton-2:checked ~ table tr {
+  opacity: 0; // Default state: hidden
+  animation: fadeInOut #{$full-animation-duration} linear infinite; // Apply full duration for the entire sequence
+  animation-fill-mode: forwards; // Hold the final state (opacity: 0)
+  
+  // Ensure the first child is hidden by default (no animation)
+  &:nth-child(1) {
+    display: none; // Do not display the first child
+  }
+
+  // Ensure the second child is always visible from the start
+  &:nth-child(2) {
+    opacity: 1;
+    animation: none; // Disable animation for the second child
+  }
+    // Apply animations to other rows with staggered delays
+  @for $i from 3 through $numYears {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$animation-duration * ($i - 2)}; // Stagger the delays
+    }
+  }
+  } 
+  table tr{
+      &:nth-child(2) {
+        opacity: 1;
+        animation: none; // Disable animation for the first child
+        .extent-bar{
+          left:50%;
+          z-index:0;
+           background: linear-gradient(135deg, $col-firstyear, rgb(238, 238, 238) 0%, $col-firstyear, rgb(227, 227, 227) 100%);
+          box-shadow: rgba(0, 0, 0, 0.39) 3px 3px 7px 0px, rgb(255, 255, 255) 3px 3px 4px -1px inset, rgba(255, 255, 255, 0) 1px 1px 8px 0px inset;
+          span{
+            color:$col-text;
+          }//span
+        }//.extent-bar
+      }//&:nth-child(2)
+      // Last child circle is visible from the start
+      &:last-child {
+       opacity: 1;
+      }
+      .extent-bar {
+      position: absolute;
+      top: 3vw;
+      left: 50%;
+      @include transform(translate(-50%, 0));
+      border-radius:50%;
+      width:calc(var(--value) * 0.65);
+      padding-bottom:calc(var(--value) * 0.65);
+  background:$col-lastyear;
+      z-index:1;
+    }//.extent-bar 
+  }//table
+
+}//.tabs > input:nth-child(1):checked ~ .tab-content
+
+  }// &:nth-child(3) card{
+  
+  &:nth-child(4){ //sea level rise
+    .tabs > input:nth-child(1):checked ~ .tab-content{  
+/* styling content of tab 3 */
+  display: block;
+  $numYears: 30 + 1; // Total number of rows/children
+$full-animation-duration: $animation-duration * $numYears; // Total duration of the animation
+// Apply animation to table rows
+#replayButton-3:checked ~ table tr {
+  opacity: 0; // Default state: hidden
+  animation: fadeInOut #{$full-animation-duration} linear infinite; // Apply full duration for the entire sequence
+  animation-fill-mode: forwards; // Hold the final state (opacity: 0)
+  
+  // Ensure the first child is hidden by default (no animation)
+  &:nth-child(1) {
+    display: none; // Do not display the first child
+  }
+
+  // Ensure the second child is always visible from the start
+  &:nth-child(2) {
+    opacity: 1;
+    animation: none; // Disable animation for the second child
+  }
+    // Apply animations to other rows with staggered delays
+  @for $i from 3 through $numYears {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$animation-duration * ($i - 2)}; // Stagger the delays
+    }
+  }
+  }     
+      
+      
+  table{
+    &:before{
+  position: absolute;
+content: "";
+border-left: 1px solid black;
+width: 5vw;
+height: 34vw;
+top: -1vw;
+@include transform(translate(12vw,0));
+    }
+
+     tr{
+            // Ensure the first child is visible from the start
+      &:nth-child(2) {
+        opacity: 1;
+        animation: none; // Disable animation for the first child
+        .extent-bar {
+         
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+        
+}
+      }//&:nth-child(2)
+      // Last child circle is visible from the start
+      &:last-child {
+       opacity: 1;
+      }
+      .extent-bar {
+       width:20vw;
+      padding-bottom:0.5vw;
+      top: calc(var(--value) * -4.9 + 30vw);
+        left: 50%;
+       span{
+       position:absolute;
+             bottom: 0;
+            left: 50%;
+         opacity:0;
+        }
+    }//.extent-bar 
+    } //tr
+  }//table
+
+}//.tabs > input:nth-child(1):checked ~ .tab-content
+  }//&:nth-child(4) card
+}//.card
+
+footer{
+  text-align: center;
+  border-top:1px solid black;
+  padding-top:30px;
+  a{
+    font-weight:200;
+    color:black;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card{
+        &:nth-child(2){ //temperature rise
+    .tabs > input:nth-child(1):checked ~ .tab-content{ 
+        table{
+          tr{
+      .extent-bar {
+               top: calc(var(--value) * -1.3 + 29vw);
+      }
+          }
+      }
+      
+      }
+  }//&:nth-child(2)
+    
+    &:nth-child(4){ //sea level rise
+    .tabs > input:nth-child(1):checked ~ .tab-content{ 
+        table{
+              &:before{
+height: 32vw;
+top: -1vw;
+    }
+          tr{
+      .extent-bar {
+         top: calc(var(--value) * -2.7 + 28vw);
+      }
+          }
+      }
+      
+      }
+  }//&:nth-child(4)
+  }//.card
+  
+}
+
+@media (max-width: 600px) {
+  .card-wrapper{
+    display:block;
+    .card{
+      font-size:16px;
+      height:130vw;
+      margin:40px 20px;
+      h2{
+        font-size:28px;
+        padding: 11vw 1vw 0 3vw;
+      }
+      p{
+        font-size:16px;
+        padding: 8px 38px 10px 3vw;
+      }
+      .tabs{
+        font-size:16px;
+        .tab-content {
+          table{
+          margin: 30px 20px 30px 20px;
+            width: calc(100% - 33px);
+        }//table
+            label {//button off
+  z-index:1;
+ margin:35px 0 0 0;
+   position: absolute;
+  display: block;
+  cursor:pointer;
+position: absolute;
+    content: '';
+    width: 40px;
+    height:40px;
+    right:65px;
+    border-radius:50%;
+  //large circle [left top blur size]
+
+ &:before{ //circle
+   content: '';
+     position: absolute;
+     width: 40px;
+    height:40px;
+    border-radius:50%;
+   background:
+     //small circle
+   radial-gradient(circle at center, rgba(0,0,0, 0.1) 5%, rgba(0,0,0,0.3) 11%, transparent 12%, transparent 40%, rgba(255,255,255,0.8) 90%);
+ box-shadow: 
+   //button[left top blur size]
+     rgb(255, 255, 255) 0 0.2vw 0.3vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.2vw 0.3vw 0.1vw inset,
+  rgba(0, 0, 0, 0.45) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.25) 0 1.1vw 1.5vw -0.2vw;
+
+
+  }// &:before
+  &:after{//dot
+  content: 'start';
+   top:45px;
+     position: absolute;
+     width: 40px;
+    height:40px;
+    font-size:11px;
+    text-align:center;
+  }//:after
+        &:hover{    ///button off 
+        &:before{
+             background:
+     //small circle
+   radial-gradient(circle at center, rgba(255, 97, 26,0.3) 5%, rgba(181, 61, 4,0.4) 11%, transparent 12%, transparent 40%, rgba(255,255,255,0.8) 90%);
+ box-shadow: 
+   //button[left top blur size]
+     rgb(255, 255, 255) 0 0.2vw 0.3vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.2vw 0.3vw 0.1vw inset,
+  rgba(0, 0, 0, 0.3) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.2) 0 1.1vw 1.5vw -0.2vw;
+             @include transition(all 200ms ease-in-out);  
+        }//&:before
+  }//&:hover
+  
+  
+}//label
+:checked{ //default state animation paused
+  + label { //button on
+      &:hover{
+          &:before{ //off
+   content: '';
+     position: absolute;
+   background:
+     //small circle
+   radial-gradient(circle at center, rgba(255, 97, 26,0.8) 5%, rgba(181, 61, 4,1) 11%, transparent 12%, transparent 40%, rgba(255,255,255,1) 90%);
+ box-shadow: 
+   //button[left top blur size]
+  rgb(255, 255, 255) 0 0.3vw 0.4vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.3vw 0.4vw 0.1vw inset,
+  rgba(0, 0, 0, 0.15) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.12) 0 1.1vw 1.5vw -0.2vw;
+          @include transition(all 200ms ease-in-out);    
+ }// &:before
+  }//&:hover
+&:before{ //on
+   content: '';
+     position: absolute;
+   background:
+     //small circle
+   radial-gradient(circle at center, rgba(255, 97, 26,0.8) 5%, rgba(181, 61, 4,0.8) 11%, transparent 12%, transparent 40%, rgba(255,255,255,0.8) 90%);
+ box-shadow: 
+   //button[left top blur size]
+  rgb(255, 255, 255) 0 0.3vw 0.4vw 0.1vw inset, 
+  rgba(0, 0, 0, 0.25) 0 -0.3vw 0.4vw 0.1vw inset,
+  rgba(0, 0, 0, 0.1) 0 0.2vw 0.4vw -0.1vw, 
+  rgba(0, 0, 0, 0.1) 0 1.1vw 1.5vw -0.2vw;
+ 
+
+  }// &:before
+&:after { //on
+   content: 'stop';
+    }//&:after
+}//+ label 
+}//:checked
+        }//.tab-content
+
+      }//tabs
+      .tabs > input:nth-child(1):checked ~ .tab-content {
+  display: block;
+
+      
+  table {
+    width: calc(100% - 33px);
+    tr {
+      &:nth-child(2){
+              .year{
+                top:-16px;
+      }
+      }
+      .year{
+        font-size:12px;
+        &:before{
+          width:10px;
+          height:10px;
+          margin-top: 2px;
+          margin-left:-16px;
+        }
+      }
+    }//tr
+        }//table
+      }//.tabs > input:nth-child(1):checked ~ .tab-content
+    .tab-label{
+          height: 27px;
+      padding: 13px 0 1vw 3vw;
+      label{
+        margin: 0 24px 0 0;
+        &:before{
+        content: "";
+width: 20px;
+height: 20px;
+display: inline-block;
+margin-right: 10px;
+margin-bottom: -0.2vw;
+border: 1px dashed #222;
+      }
+      }
+        }
+      dl.references {
+        height:130vw;
+        width:34px;
+        padding-top: 32.5px;
+      }
+      footer{
+        height:33px;
+      }
+      
+        &:nth-child(2){ //temperature rise
+    .tabs > input:nth-child(1):checked ~ .tab-content{ 
+        table{
+          &:before{
+            height:60vw;
+          }
+          tr{
+      .extent-bar {
+               top: calc(var(--value) * -2 + 63vw);
+      }
+          }
+      }
+      
+      }
+  }//&:nth-child(2)
+    
+    &:nth-child(4){ //sea level rise
+    .tabs > input:nth-child(1):checked ~ .tab-content{ 
+        table{
+              &:before{
+height: 60vw;
+top: 0;
+    }
+          tr{
+      .extent-bar {
+        width:40vw;
+        left:30vw;
+         top: calc(var(--value) * -3.5 + 55vw);
+      }
+          }
+      }
+      
+      }
+  }//&:nth-child(4)
+    }//.card
+  }
+}
+
+
+
+
+
