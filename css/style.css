@@ -346,7 +346,7 @@ article header h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 220vw;
+  height: 400vw;
 }
 #gallery section figcaption {
   display: none;
@@ -647,7 +647,7 @@ footer p {
     margin-left: 0;
   }
   #gallery {
-    height: 595vw;
+    height: 990vw;
   }
   #gallery figure img {
     width: 30vw;
@@ -736,7 +736,7 @@ footer p {
     padding: 20vh 0 30vh 0;
   }
   #gallery {
-    height: 640vw;
+    height: 1050vw;
   }
   #gallery figure img {
     width: 32vw;
