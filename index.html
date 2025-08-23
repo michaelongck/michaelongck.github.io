@@ -25,14 +25,14 @@
             <li>
                 <a href="#about">About</a>
                 <a href="#work">Work</a>
-                <a href="#editorials">Editorials</a>
+                <a href="#editorial">Editorial</a>
                 <a href="#contact">Contact</a>
             </li>
         </ul>
     </nav>
     <article>
         <section id="about">
-            <img src="https://michaelongck.github.io/img/michaelong-portrait.jpg" alt="headshot of michael ong amongst three of his sculptures">
+            <img src="img/michaelong-portrait.jpg" alt="headshot of michael ong amongst three of his sculptures">
             <article>
             <p>Michael Ong is a second generation artist especially known for his unusually vivacious drawings and fluid sculptures. His work is characterized by deceptively simple sharply defined abstract forms that flow effortlessly from one intricate view to the next. </p>
             <p>After completing his art studies at the prestigious R.M.I.T. University in Melbourne and later a Masters in Industrial Design in the early 1970s, he returned to Singapore. He was active in the Sculpture Society and informal art groups like ‘Group 90’ (founded by Brother Joseph McNally). In 1984, Michael was selected to represent Singapore at the 4 ASEAN Sculpture Symposium in Brunei and he created a monumental piece which stands towering over Asian Square.</p>
@@ -47,8 +47,21 @@
              <main id="gallery"></main>
             </div><!-- end .grid -->
         </section>
-<section id="editorials"><h2>Editorials</h2></section>
-<section id="Contact"><h2>Contact</h2></section>
+<section id="editorial"><h2>Editorial</h2>
+  <div id="editorial-article"></div>
+</section>
+<section id="Contact">
+  <h2>Contact</h2>
+  <p>FOST Private Limited<br>
+1 Lock Road<br>
+#01-02, Gillman Barracks<br>
+Singapore 108932
+</p>
+
+ <p>65 6694 3080<br>
+info@fostgallery.com</p>
+
+</section>
 
     </article>
     <footer>
@@ -61,15 +74,45 @@
     <!-- Artwork List-->
 <script>
   const artworkList = [
-  {
-    "title": "The Awakening",
-    "date": 2021,
-    "medium": "print",
-    "material": "Monotype print and oil emulsion on paper",
-    "overview": "Whilst printmaking is a process which relies heavily on technical knowledge and pre-planning, Ong manages to imbue a sense of spontaneity into his prints using a mixture of monoprint technique and hand painting. Many of the forms in his prints can be recognised in his metal sculptures. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/The Awakening.jpg",
-    "caption": "photograph by Fost Gallery",
-    "alttext": "Michael Ong, ‘The Awakening’, 2021, Print, Monotype print and oil emulsion on paper, Fost Gallery"
+      {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "sculpture",
+    "material": "wood",
+    "img": "img/work/sculpture1.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "photo of wooden sculpture"
+  },
+      {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "sculpture",
+    "material": "wood",
+    "img": "img/work/sculpture2.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "photo of wooden sculpture"
+  },
+        {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "sculpture",
+    "material": "wood",
+    "img": "img/work/sculpture3.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "photo of wooden sculpture"
+  },
+        {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "sculpture",
+    "material": "wood",
+    "img": "img/work/sculpture4.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "photo of wooden sculpture"
   },
   {
     "title": "Singing the Blues",
@@ -77,7 +120,7 @@
     "medium": "print",
     "material": "Monotype print and oil emulsion on paper",
     "overview": "Whilst printmaking is a process which relies heavily on technical knowledge and pre-planning, Ong manages to imbue a sense of spontaneity into his prints using a mixture of monoprint technique and hand painting. Many of the forms in his prints can be recognised in his metal sculptures. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Singing the Blues.jpg",
+    "img": "img/work/Singing the Blues.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Singing the Blues’, 2021, Print, Monotype print and oil emulsion on paper, Fost Gallery"
   },
@@ -87,7 +130,7 @@
     "medium": "print",
     "material": "Monotype print and oil emulsion on paper",
     "overview": "Whilst printmaking is a process which relies heavily on technical knowledge and pre-planning, Ong manages to imbue a sense of spontaneity into his prints using a mixture of monoprint technique and hand painting. Many of the forms in his prints can be recognised in his metal sculptures. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Sunset on the Horizon.jpg",
+    "img": "img/work/Sunset on the Horizon.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Sunset on the Horizon’, 2021, Print, Monotype print and oil emulsion on paper, Fost Gallery"
   },
@@ -97,7 +140,7 @@
     "medium": "print",
     "material": "Monotype print and oil emulsion on paper",
     "overview": "Whilst printmaking is a process which relies heavily on technical knowledge and pre-planning, Ong manages to imbue a sense of spontaneity into his prints using a mixture of monoprint technique and hand painting. Many of the forms in his prints can be recognised in his metal sculptures. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Sunrise on the Horizon.jpg",
+    "img": "img/work/Sunrise on the Horizon.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Sunrise on the Horizon’, 2021, Print, Monotype print and oil emulsion on paper, Fost Gallery"
   },
@@ -107,7 +150,7 @@
     "medium": "print",
     "material": "Monotype print and oil emulsion on paper",
     "overview": "Whilst printmaking is a process which relies heavily on technical knowledge and pre-planning, Ong manages to imbue a sense of spontaneity into his prints using a mixture of monoprint technique and hand painting. Many of the forms in his prints can be recognised in his metal sculptures. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Fire, Fire Burning Bright.jpg",
+    "img": "img/work/Fire, Fire Burning Bright.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Fire, Fire Burning Bright’, 2021, Print, Monotype print and oil emulsion on paper, Fost Gallery"
   },
@@ -117,7 +160,7 @@
     "medium": "sculpture",
     "material": "Stones, wood and paint",
     "overview": "Ong’s on-going series of small-scale sculptures found on his frequent walks along beaches and forests, as well as in antique markets. They are the result of a spontaneous and playful combination of seemingly disparate objects, but when arranged purposefully, result in a sculptural form that transcends material, time and geography. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/On Balance.jpg",
+    "img": "img/work/On Balance.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘On Balance’, 2017, Sculpture, Stones, wood and paint, Fost Gallery"
   },
@@ -127,7 +170,7 @@
     "medium": "sculpture",
     "material": "Stones, handcarved wood and paint",
     "overview": "Ong’s on-going series of small-scale sculptures found on his frequent walks along beaches and forests, as well as in antique markets. They are the result of a spontaneous and playful combination of seemingly disparate objects, but when arranged purposefully, result in a sculptural form that transcends material, time and geography. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Emerald Perch.jpg",
+    "img": "img/work/Emerald Perch.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Emerald Perch’, 2017, Sculpture, Stones, handcarved wood and paint, Fost Gallery"
   },
@@ -137,7 +180,7 @@
     "medium": "sculpture",
     "material": "Wood, paint, ceramic found object (horse)",
     "overview": "Ong’s on-going series of small-scale sculptures found on his frequent walks along beaches and forests, as well as in antique markets. They are the result of a spontaneous and playful combination of seemingly disparate objects, but when arranged purposefully, result in a sculptural form that transcends material, time and geography. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Dark Horse.jpg",
+    "img": "img/work/Dark Horse.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Dark Horse’, 2017, Sculpture, Wood, paint, ceramic found object (horse), Fost Gallery"
   },
@@ -147,7 +190,7 @@
     "medium": "sculpture",
     "material": "Rocks, coral, porcelain found object (head of female figurine)",
     "overview": "Ong’s on-going series of small-scale sculptures found on his frequent walks along beaches and forests, as well as in antique markets. They are the result of a spontaneous and playful combination of seemingly disparate objects, but when arranged purposefully, result in a sculptural form that transcends material, time and geography. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Emerging Sainte.jpg",
+    "img": "img/work/Emerging Sainte.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Emerging Sainte’, 2017, Sculpture, Rocks, coral, porcelain found object (head of female figurine), Fost Gallery"
   },
@@ -157,7 +200,7 @@
     "medium": "sculpture",
     "material": "Rocks, ceramic found object (torso of female figurine)",
     "overview": "Ong’s on-going series of small-scale sculptures found on his frequent walks along beaches and forests, as well as in antique markets. They are the result of a spontaneous and playful combination of seemingly disparate objects, but when arranged purposefully, result in a sculptural form that transcends material, time and geography. (excerpt by Fost Gallery)",
-    "img": "https://michaelongck.github.io/img/Venus on the Rocks.jpg",
+    "img": "img/work/Venus on the Rocks.jpg",
     "caption": "photograph by Fost Gallery",
     "alttext": "Michael Ong, ‘Venus on the Rocks’, 2017, Sculpture, Rocks, ceramic found object (torso of female figurine), Fost Gallery"
   },
@@ -167,21 +210,21 @@
         "date": 2011,
         "medium": "sculpture",
         "material": "Wood, paint, ceramic, metal, found objects",
-        "img": "https://michaelongck.github.io/img/Together on our knees.jpg"
+        "img": "img/work/Together on our knees.jpg"
     },
     {
         "title": "In The Woods",
         "date": 2009,
         "medium": "sculpture",
         "material": "Glass, wood, paint, found objects (seeds, snake)",
-        "img": "https://michaelongck.github.io/img/In the Woods.jpg"
+        "img": "img/work/In the Woods.jpg"
     },
     {
         "title": "The Boxer",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/The Boxer.jpg",
+        "img": "img/work/The Boxer.jpg",
         "caption": "photograph by Peter Fong"
     },
     {
@@ -189,7 +232,7 @@
         "date": 2008,
         "medium": "sculpture",
         "material": "Bronze and wood",
-        "img": "https://michaelongck.github.io/img/New Inspiration.jpg",
+        "img": "img/work/New Inspiration.jpg",
         "caption": "photograph by Peter Fong"
     },
     {
@@ -197,7 +240,7 @@
         "date": 2008,
         "medium": "sculpture",
         "material": "Bronze and wood",
-        "img": "https://michaelongck.github.io/img/Tree of Life.jpg",
+        "img": "img/work/Tree of Life.jpg",
         "caption": "photograph by Peter Fong"
     },
     {
@@ -205,120 +248,140 @@
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette1.jpg"
+        "img": "img/work/Marquette1.jpg"
     },
     {
         "title": "Marquette2",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette2.jpg"
+        "img": "img/work/Marquette2.jpg"
     },
     {
         "title": "Marquette3",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette3.jpg"
+        "img": "img/work/Marquette3.jpg"
     },
     {
         "title": "Marquette4",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette4.jpg"
+        "img": "img/work/Marquette4.jpg"
     },
     {
         "title": "Marquette5",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette5.jpg"
+        "img": "img/work/Marquette5.jpg"
     },
     {
         "title": "Marquette6",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette6.jpg"
+        "img": "img/work/Marquette6.jpg"
     },
     {
         "title": "Marquette7",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette7.jpg"
+        "img": "img/work/Marquette7.jpg"
     },
     {
         "title": "Marquette8",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette8.jpg"
+        "img": "img/work/Marquette8.jpg"
     },
     {
         "title": "Marquette9",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette9.jpg"
+        "img": "img/work/Marquette9.jpg"
     },
     {
         "title": "Marquette10",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette10.jpg"
+        "img": "img/work/Marquette10.jpg"
     },
     {
         "title": "Marquette11",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette11.jpg"
+        "img": "img/work/Marquette11.jpg"
     },
     {
         "title": "Marquette12",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette12.jpg"
+        "img": "img/work/Marquette12.jpg"
     },
     {
         "title": "Marquette13",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette13.jpg"
+        "img": "img/work/Marquette13.jpg"
     },
     {
         "title": "Marquette14",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette14.jpg"
+        "img": "img/work/Marquette14.jpg"
     },
     {
         "title": "Marquette15",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette15.jpg"
+        "img": "img/work/Marquette15.jpg"
     },
     {
         "title": "Marquette16",
         "date": 2008,
         "medium": "sculpture",
         "material": "Clay and glaze",
-        "img": "https://michaelongck.github.io/img/Marquette16.jpg"
+        "img": "img/work/Marquette16.jpg"
     },
+            {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "drawing",
+    "material": "pencil, paper, paint",
+    "img": "img/work/lifedrawing1.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "pencil drawing of woman figure"
+  },
+          {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "drawing",
+    "material": "pencil, paper, paint",
+    "img": "img/work/lifedrawing2.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "3 pencil drawings of a woman figure"
+  },
     {
         "title": "Milestone",
         "date": 2007,
         "medium": "sculpture",
         "material": "Bronze and marble",
         "overview": "Ong has always focused on the material, be it wood or clay, and what each type of material could bring to the eventual aesthetics of the sculpture. A keen observer, honed from years of life drawing, he transits from observation to manipulation of the material and finally production, as these sculptures are finally cast in bronze. (excerpt by Fost Gallery)",
-        "img": "https://michaelongck.github.io/img/Milestone.jpg",
+        "img": "img/work/Milestone.jpg",
         "caption": "photograph by Fost Gallery",
         "alttext": "Michael Ong, ‘Milestone’, 2007, Sculpture, Bronze and marble, Fost Gallery"
     },
@@ -328,7 +391,7 @@
         "medium": "sculpture",
         "material": "Bronze and marble",
         "overview": "Ong has always focused on the material, be it wood or clay, and what each type of material could bring to the eventual aesthetics of the sculpture. A keen observer, honed from years of life drawing, he transits from observation to manipulation of the material and finally production, as these sculptures are finally cast in bronze. (excerpt by Fost Gallery)",
-        "img": "https://michaelongck.github.io/img/Undulate.jpg",
+        "img": "img/work/Undulate.jpg",
         "caption": "photograph by Fost Gallery",
         "alttext": "Michael Ong, ‘Undulate’, 2007, Sculpture, Bronze and marble, Fost Gallery"
     },
@@ -337,7 +400,7 @@
         "date": 2006,
         "medium": "sculpture",
         "material": "Bronze",
-        "img": "https://michaelongck.github.io/img/Transformation.jpg",
+        "img": "img/work/Transformation.jpg",
         "caption": "photograph by Peter Fong"
     },
     {
@@ -346,7 +409,7 @@
         "medium": "sculpture",
         "material": "Wood",
         "overview": "International Sculpture Symposium. Fort Canning, Singapore",
-        "img": "https://michaelongck.github.io/img/Fort Canning.jpg"
+        "img": "img/work/Fort Canning.jpg"
     },
     {
         "title": "The Changi Tree",
@@ -354,14 +417,44 @@
         "medium": "sculpture",
         "material": "Wood",
         "overview": "(Singapore’s Oldest Tree) Singapore Zoological Gardens",
-        "img": "https://michaelongck.github.io/img/The Changi Tree.jpg"
+        "img": "img/work/The Changi Tree.jpg"
     },
+      {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "print",
+    "material": "Monotype print and oil emulsion on paper",
+    "img": "img/work/print1.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "artwork in print"
+  },
+    {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "print",
+    "material": "Monotype print and oil emulsion on paper",
+    "img": "img/work/print2.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "artwork in print"
+  },
+    {
+    "title": "Untitled",
+    "date": 0,
+    "medium": "print",
+    "material": "Monotype print and oil emulsion on paper",
+    "img": "img/work/print3.jpg",
+    "overview": "",
+    "caption": "",
+    "alttext": "artwork in print"
+  },
     {
         "title": "Three Elements",
         "date": 1985,
         "medium": "sculpture",
         "material": "Wood",
-        "img": "https://michaelongck.github.io/img/Three Elements.jpg"
+        "img": "img/work/Three Elements.jpg"
     },
     {
         "title": "Cement Fondu",
@@ -369,7 +462,7 @@
         "medium": "sculpture",
         "material": "Bronze",
         "overview": "Sculpture Symposium, Cement Fondu, Brunei",
-        "img": "https://michaelongck.github.io/img/Cement Fondu.jpg"
+        "img": "img/work/Cement Fondu.jpg"
     }
   ];
 
@@ -436,28 +529,167 @@ const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
-  // Get current scroll position
   let scrollY = window.pageYOffset;
 
-  // Loop through sections to get height, top, and ID values
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50; // Offset for better scroll highlight visibility
+    const sectionTop = current.offsetTop - 50;
     const sectionId = current.getAttribute("id");
 
-    // Add .active class to corresponding navigation link when in view
+    const navLink = document.querySelector("nav a[href*=" + sectionId + "]");
+
+    if (!navLink) return; // ✅ Prevent the error if nav link doesn't exist
+
     if (
       scrollY > sectionTop &&
       scrollY <= sectionTop + sectionHeight
     ) {
-      document.querySelector("nav a[href*=" + sectionId + "]").classList.add("active");
+      navLink.classList.add("active");
     } else {
-      document.querySelector("nav a[href*=" + sectionId + "]").classList.remove("active");
+      navLink.classList.remove("active");
     }
   });
 }
 
     </script>
+
+     <script>
+    const editorialList = [
+       {
+
+        "img": "img/editorial/newspaper4.jpg",
+        "caption": "",
+        "alttext": "scan of newspaper article"
+            },
+            {
+
+        "img": "img/editorial/newspaper1.jpg",
+        "caption": "",
+        "alttext": "scan of newspaper article"
+            },
+            {
+
+  
+        "img": "img/editorial/newspaper2.jpg",
+        "caption": "",
+        "alttext": "scan of newspaper article"
+            },
+            {
+    
+
+        "publisher": "",
+
+        "img": "img/editorial/newspaper3.jpg",
+        "caption": "",
+        "alttext": "scan of newspaper article"
+            },
+
+                  {
+        "title": "Forming, Materials & Processes",
+        "date": 2008,
+        "publisher": "Sculpture Square Limited",
+        "overview": "Exhibition catalogue, Sculpture Square",
+        "img": "img/editorial/catalog2.jpg",
+        "caption": "",
+        "alttext": "Form-ing exhibition brochure"
+      },
+            {
+        "title": "Form + Reform",
+        "date": 2009,
+        "publisher": "Curated by Ngee Ann Visual Arts Team",
+        "overview": "Form + Reform, 6th Ngee Ann, 3D Art Exhibition catalogue, page 7",
+        "img": "img/editorial/catalog1.jpg",
+        "caption": "Photo credits: Robin Ng",
+        "alttext": "scan of exhibition catalog"
+      },
+            {
+
+        "overview": "",
+        "img": "img/editorial/groupphoto1.jpg",
+        "caption": "",
+        "alttext": "photo of a group of artists"
+            },
+            {
+ 
+        "overview": "",
+        "img": "img/editorial/groupphoto2.jpg",
+        "caption": "",
+        "alttext": "photo of a group of artists"
+            },
+                    {
+  
+        "overview": "",
+        "img": "img/editorial/groupphoto3.jpg",
+        "caption": "",
+        "alttext": "photo of a group of artists"
+            }
+    ];
+
+const editorialContainer = document.getElementById('editorial-article');
+
+editorialList.forEach((item, idx) => {
+  const id = idx + 1;
+
+  // Thumbnail section
+  const section = document.createElement('section');
+  section.innerHTML = `
+    <a href="#editorial${id}">
+      <figure>
+        <img src="${item.img || ''}" alt="${item.alttext || ''}">
+        <figcaption>${item.title || ''}${item.date ? `, ${item.date}` : ''}</figcaption>
+      </figure>
+    </a>
+  `;
+  editorialContainer.appendChild(section);
+
+  // Modal article
+  const article = document.createElement('article');
+  article.id = `editorial${id}`;
+  article.className = 'modal';
+
+  // Optional fields
+  const caption = item.caption ? `<figcaption>${item.caption}</figcaption>` : '';
+  const overview = item.overview ? `<p>${item.overview}</p>` : '';
+  const date = item.date ? `<li><strong>Date:</strong> ${item.date}</li>` : '';
+  const publisher = item.publisher ? `<li><strong>Publisher:</strong> ${item.publisher}</li>` : '';
+
+  const prevLink = idx > 0 ? `<a href="#editorial${id - 1}" class="prev">&lt; <span>Prev</span></a>` : '';
+  const nextLink = idx < editorialList.length - 1 ? `<a href="#editorial${id + 1}" class="next">&gt; <span>Next</span></a>` : '';
+
+  article.innerHTML = `
+    <a class="close" href="#">&#10005;</a>
+    <figure>
+      <img src="${item.img || ''}" alt="${item.alttext || ''}">
+      ${caption}
+    </figure>
+    <h2>${item.title || ''}</h2>
+    ${overview}
+    <ul>
+      ${date}
+      ${publisher}
+    </ul>
+    <div class="modal-nav">
+      ${prevLink}
+      ${nextLink}
+    </div>
+  `;
+  
+  document.body.appendChild(article);
+});
+
+// Close modal functionality (prevents page jump)
+document.querySelectorAll('.close').forEach(closeButton => {
+  closeButton.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent hash navigation
+    const modal = closeButton.closest('.modal');
+    modal.style.display = 'none'; // Hide modal
+    history.replaceState(null, '', location.pathname); // Remove hash from URL
+  });
+});
+
+  </script>
+
+
 
 </body>
 
