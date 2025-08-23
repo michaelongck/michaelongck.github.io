@@ -471,8 +471,7 @@ figure img{
     width:30vw;
 }
 }
-  
-  
+
   
   
   ///******
@@ -741,7 +740,8 @@ margin-left:-20%;
       display: block;
       width: 100%;
       float: left;
-      padding: 40px 0 10px 0;
+      padding: 10px 0 10px 0;
+      margin-top:60px;
       font-size: 12px;
       border-top: 1px dashed lighten(black, 80%);
       
@@ -774,6 +774,7 @@ margin-left:-20%;
       //ul
       p {
           font-size: 11px;
+            text-align: center;
       }
   
       //p
@@ -895,6 +896,8 @@ figure img{
     width:45vw;
 }
 }
+
+
 .modal figure img {
   width: 80%;
   height:auto;
@@ -1008,6 +1011,9 @@ figure img{
     width:32vw;
 }
 }
+
+
+
 .grid{
         figure{
             width:100%;
