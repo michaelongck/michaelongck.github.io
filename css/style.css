@@ -1,59 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ovo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 html {
   scroll-behavior: smooth;
-  margin: 0;
-  height: 100%;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  width: 100%;
 }
 
+html,
 body {
-  margin: 0;
+  margin: 0 auto;
   height: 100%;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   width: 100%;
+  background: #FCFBFC;
+  max-width: 1400px;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
+h2 {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 400;
+}
+
 a {
-  color: #222;
+  color: black;
   transition: all ease-out 300ms;
-  display: inline-block;
+  text-decoration: none;
+  border-bottom: 2px solid lightgray;
 }
 a:hover {
-  opacity: 0.8;
-  text-decoration-style: dashed;
+  opacity: 0.6;
+  border-bottom: 1px dotted;
   cursor: pointer;
 }
 
 section {
   display: block;
-  float: left;
-  width: 100%;
-}
-section > h1 {
-  font-weight: 800;
-  font-size: 40px;
-}
-section > h2 {
-  font-weight: 800;
-  font-size: 30px;
-}
-section > h3 {
-  font-family: "Lora", serif;
-  font-weight: 400;
-  font-size: 30px;
-  padding: 10px 0;
-  letter-spacing: 1px;
 }
 
 figure {
@@ -62,7 +46,104 @@ figure {
 }
 figure img {
   width: 100%;
-  background: #222;
+  background: black;
+}
+
+figure img {
+  width: 18vw;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: white;
+  padding: 0 20px 0 20px;
+  border: 1px solid #ccc;
+  z-index: 100;
+  overflow: scroll;
+  height: 100vh;
+}
+.modal h2 {
+  text-align: center;
+  border-top: 1px solid black;
+  max-width: 600px;
+  margin: 20px auto;
+  padding-top: 20px;
+}
+.modal figure {
+  margin-top: 50px;
+}
+.modal figure img {
+  height: 100vh;
+  width: auto;
+}
+.modal figure figcaption {
+  font-size: 14px;
+  opacity: 0.7;
+}
+.modal p {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 40px;
+  border-bottom: 1px solid black;
+}
+.modal ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.modal ul li {
+  list-style-type: none;
+}
+
+.modal:target {
+  display: block;
+}
+
+a.close {
+  float: right;
+  text-decoration: none;
+  font-size: 32px;
+  border: none;
+}
+a.close:hover {
+  color: darkred;
+  opacity: 1;
+}
+
+.modal-nav a.prev {
+  font-size: 36px;
+  text-decoration: none;
+  border: none;
+  position: absolute;
+  z-index: 5;
+  filter: alpha(opacity=80);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
+  padding: 0.5rem 1rem;
+  top: 50vh;
+  left: 0;
+}
+.modal-nav a.next {
+  font-size: 36px;
+  text-decoration: none;
+  border: none;
+  position: absolute;
+  z-index: 5;
+  filter: alpha(opacity=80);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
+  padding: 0.5rem 1rem;
+  top: 50vh;
+  right: 0;
+}
+.modal-nav span {
+  font-size: 11px;
+  display: block;
+  text-transform: uppercase;
 }
 
 nav {
@@ -70,37 +151,37 @@ nav {
   top: 0;
   z-index: 2;
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.7);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to left, rgba(82, 81, 81, 0.8), rgba(0, 0, 0, 0.9));
-  color: white;
-  height: 50px;
-  padding: 30px 15px;
+  background: #FCFBFC;
+  color: #555;
+  height: 60px;
+  padding: 16px 0;
+}
+nav a {
+  border-bottom: none;
 }
 nav a img {
-  width: 40px;
+  width: 30px;
   margin-top: 12px;
 }
 nav a h1 {
   float: right;
   text-transform: uppercase;
-  margin: 12px 12px 12px 12px;
-  font-size: 20px;
-  color: white;
+  margin: 16px 0 20px 0;
+  font-size: 26px;
+  color: #222;
   text-align: left;
   font-weight: 500;
   line-height: 1;
 }
 nav a h1 span {
-  display: block;
-  font-weight: 200;
-  text-transform: none;
-  font-size: 16px;
-  margin-top: 4px;
+  font-weight: 600;
+  color: darkred;
 }
 nav a:hover {
   border: none;
@@ -114,27 +195,29 @@ nav ul.menu li a {
   display: inline-block;
   position: relative;
   padding: 10px;
-  color: white;
+  color: #222;
+  font-size: 18px;
+  font-weight: 300;
 }
 nav ul.menu li a:after {
   content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 1px;
+  height: 2px;
   bottom: 0;
   left: 0;
-  background-color: white;
+  background-color: darkred;
   transition: transform 0.25s ease-out;
-}
-nav ul.menu li a:hover {
-  color: white;
 }
 nav ul.menu li a:hover:after {
   transform: scaleX(1);
 }
+nav ul.menu li a:hover {
+  color: #222;
+}
 nav ul.menu li a.active {
-  color: white;
+  color: #222;
   position: relative;
   padding: 10px;
 }
@@ -143,10 +226,10 @@ nav ul.menu li a.active:after {
   position: absolute;
   width: 100%;
   transform: scaleX(1);
-  height: 2px;
+  height: 4px;
   bottom: 0;
   left: 0;
-  background-color: white;
+  background-color: darkred;
   transition: transform 0.25s ease-out;
 }
 nav .menu-button-container {
@@ -161,17 +244,11 @@ nav .menu-button-container {
 nav #menu-toggle {
   display: none;
 }
-nav .menu-button {
+nav .menu-button,
+nav .menu-button::before,
+nav .menu-button::after {
   display: block;
-  background-color: white;
-  position: absolute;
-  height: 2px;
-  width: 30px;
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-nav .menu-button::before, nav .menu-button::after {
-  display: block;
-  background-color: white;
+  background-color: #222;
   position: absolute;
   height: 2px;
   width: 30px;
@@ -197,126 +274,31 @@ nav #menu-toggle:checked + .menu-button-container .menu-button::after {
   transform: rotate(-45deg);
 }
 
-@media (max-width: 850px) {
-  nav .menu {
-    position: absolute;
-    top: 0;
-    margin-top: 50px;
-    left: 0;
-    width: calc(100% + 40px);
-    margin-left: -40px;
-  }
-  nav .menu > li {
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    color: white;
-    background-color: #222;
-  }
-  nav .menu > li:not(:last-child) {
-    border-bottom: 1px solid #444;
-  }
-  nav .menu-button-container {
-    display: flex;
-  }
-  nav #menu-toggle ~ .menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 100ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  nav #menu-toggle ~ .menu li a {
-    opacity: 0;
-    padding: 5vh 0;
-  }
-  nav #menu-toggle:checked ~ .menu li {
-    border: 1px solid #333;
-    height: 100vh;
-    padding: 0.5em;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    opacity: 1;
-  }
-  nav #menu-toggle:checked ~ .menu li a {
-    opacity: 1;
-    display: block;
-  }
-}
 article header {
-  margin: 0 auto;
-  border-width: 5px;
-  position: relative;
-  height: 100vh;
-  min-height: 50vh;
-  padding-top: 30vh;
-}
-article header:after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  height: calc(100% + 6px);
-  width: calc(100% + 6px);
-  background: linear-gradient(60deg, #f37055, #f79533, #FFDC18, white, white, white, #FFDC18, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82, #D0F0C0, white, white, #D0F0C0, #6fba82, #07b39b, #5073b8);
-  z-index: -1;
-  animation: animatedgradient 16s ease alternate infinite;
-  background-size: 300% 300%;
-  background-size: 800% 100%;
-  opacity: 0.4;
+  text-align: center;
+  background-attachment: scroll;
+  background-image: url(../img/header.jpg);
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+  -o-background-size: cover;
+  min-height: 150px;
+  max-height: 400px;
+  background-color: black;
 }
 article header h2 {
-  padding: 0 16px 0 16px;
+  padding-top: 300px;
+  padding-bottom: 200px;
   margin: 0;
   font-weight: normal;
-  font-size: 48px;
-  color: #333;
-  line-height: 1.8;
-  max-width: 1000px;
-  margin: 0 auto;
-  font-weight: 500;
-  font-family: "Lora", serif;
   font-style: italic;
-}
-article header p {
-  line-height: 1.8;
-  font-size: 24px;
-  font-family: "Lora", serif;
+  color: #cccccc;
 }
 
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@media (max-width: 600px) {
-  article header {
-    max-height: 100vh;
-    height: 100vh;
-    padding-top: 25vh;
-  }
-  article header h2 {
-    font-size: 28px;
-  }
-  article header h2 span {
-    display: block;
-  }
-}
 #work {
-  padding-top: 80px;
-  margin: 0 auto;
-}
-#work > h3 {
-  font-family: "Londrina Solid", sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  padding: 10px 0;
-  letter-spacing: 1px;
+  padding-top: 60px;
+  max-width: 1700px;
+  margin: 0 auto 0 -5px;
 }
 #work .item {
   display: block;
@@ -326,59 +308,143 @@ article header p {
 }
 #work .item img {
   width: 100%;
-  background: #222;
+  background: black;
+}
+#work .item .overlay {
+  position: absolute;
+  width: 25%;
+  height: 85%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all ease 0.5s;
+}
+#work .item .overlay h3 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 20px;
+  margin-top: -12px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+#work .item:hover .overlay {
+  opacity: 1;
+}
+#work .item:hover .overlay h2 {
+  opacity: 1;
+  margin-top: 8px;
+}
+
+#gallery {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 190vw;
+}
+#gallery section figcaption {
+  display: none;
 }
 
 .grid {
   position: relative;
-  margin: 40px auto 0 auto;
+  margin: 0 auto;
   list-style: none;
   text-align: center;
-  max-width: 1700px;
-  float: left;
-  width: 100%;
-}
-.grid .codepen {
-  position: relative;
-  float: left;
-  overflow: hidden;
-  width: 42%;
-  text-align: center;
-  cursor: pointer;
-  margin: 2% 2% 2% 6%;
-}
-.grid .codepen:nth-child(2n) {
-  margin: 2% 6% 2% 2%;
-}
-.grid .codepen h2 {
-  font-weight: 300;
-  margin-top: 8px;
-  font-size: min(max(16px, 2vw), 20px);
-}
-.grid .codepen .cp_embed_wrapper {
-  background-color: #222;
 }
 .grid figure {
   position: relative;
   float: left;
   overflow: hidden;
-  width: 31.3%;
+  width: 32.3%;
+  margin: 0.5%;
   text-align: center;
   cursor: pointer;
-  margin: 1%;
-}
-.grid figure a {
-  text-decoration: none;
+  background: #000;
 }
 .grid figure img {
   position: relative;
   display: block;
   min-height: 100%;
   max-width: 100%;
-  background: #222;
+  opacity: 0.8;
+  background: black;
+}
+.grid figure figcaption {
+  padding: 1.5vw;
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 25%;
+  height: 85%;
+  opacity: 0;
+  transition: all ease 0.8s;
+}
+.grid figure figcaption::before, .grid figure figcaption::after {
+  pointer-events: none;
+}
+.grid figure figcaption a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+.grid figure:hover figcaption {
+  opacity: 1;
+}
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.grid figure h2 {
+  font-weight: 300;
+  margin: 0;
+  font-size: 2vw;
+}
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 1vw;
+  margin: 0;
+}
+.grid figure .tag {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  width: 25%;
+}
+.grid figure .tag img {
+  background: none;
+  filter: grayscale(0.4);
+}
+.grid figure:hover h2,
+.grid figure:hover p {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.grid figure:hover figcaption::before, .grid figure:hover figcaption::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.grid figure img {
+  opacity: 1;
+  transition: opacity 0.3s;
+  background: black;
   transition: all 500ms ease-in;
 }
-.grid figure img::before, .grid figure img::after {
+.grid figure:hover img {
+  opacity: 0.2;
+  transform: scale(1.1);
+  transition: all 600ms ease-in;
+}
+.grid figure figcaption::before, .grid figure figcaption::after {
   position: absolute;
   top: 5%;
   right: 5%;
@@ -388,352 +454,72 @@ article header p {
   opacity: 0;
   transition: opacity 0.7s, transform 0.7s;
 }
-.grid figure img::before {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+.grid figure figcaption::before {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   transform: scale(0, 1);
 }
-.grid figure img::after {
-  border-right: 1px solid white;
-  border-left: 1px solid white;
+.grid figure figcaption::after {
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
   transform: scale(1, 0);
 }
-.grid figure::before, .grid figure::after {
-  pointer-events: none;
-}
-.grid figure figcaption {
-  padding: 1.5vw;
-  color: #222;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  height: 5.5vw;
-}
 .grid figure h2 {
-  font-weight: 300;
-  margin: 0;
-  font-size: 1.4vw;
+  padding: 20% 4% 0 4%;
+  transition: all 300ms ease-in;
+  transform: translate3d(0, -20px, 0);
 }
 .grid figure p {
-  letter-spacing: 1px;
-  font-size: 1vw;
-  margin: 0;
-  display: none;
-}
-.grid figure figcaption {
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding: 15px 20px;
-  position: relative;
-}
-.grid figure h2:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  border-radius: 5px;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-  background: #333;
-  transform-origin: bottom right;
-  transition: transform 0.5s ease-out;
-}
-.grid figure:hover img {
-  opacity: 0.8;
-}
-.grid figure:hover img::before, .grid figure:hover img::after {
-  opacity: 1;
-  transform: scale(1);
-}
-.grid figure:hover a {
-  border-bottom: none;
-  opacity: 1;
-}
-.grid figure:hover h2 {
-  opacity: 1;
-}
-.grid figure:hover h2:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* Read more */
-.readmore-state {
-  display: none;
-}
-.readmore-state:checked ~ .readmore-target {
-  opacity: 1;
-  font-size: inherit;
-  max-height: 999em;
-  transition: all 200ms ease-in;
-}
-.readmore-state:checked ~ .readmore-target figure img {
-  height: auto;
-  background: #222;
-}
-.readmore-state:checked ~ .readmore-trigger:before {
-  content: "Show less";
-}
-.readmore-state ~ .readmore-trigger:before {
-  content: "More projects";
-}
-.readmore-state ~ label.readmore-trigger {
-  margin: 0 0 6em 0;
-  display: inline-block;
-  border: 1px solid #222;
-  width: 10em;
-  text-align: center;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
-.readmore-target {
+  padding: 20px 2.5em;
   opacity: 0;
-  max-height: 0;
-  font-size: 0;
-}
-.readmore-target figure img {
-  height: 0;
-  background: #222;
-}
-
-.readmore-trigger {
-  cursor: pointer;
-  display: inline-block;
-  text-align: right;
-  margin-right: 2em;
-  color: #333;
-  padding: 1em;
-  font-size: 0.8em;
-  right: 10%;
-}
-.readmore-trigger:hover {
-  background-color: #222;
-  color: white;
-  transition: all 100ms ease-in;
-}
-
-#orgs {
-  padding: 30px 0;
-  margin: 0 auto;
-}
-#orgs div {
-  position: relative;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 1700px;
-}
-#orgs > h3 {
-  font-family: "Lora", serif;
-  font-weight: 400;
-  font-size: 30px;
-  padding: 10px 0;
-  letter-spacing: 1px;
-}
-#orgs img {
-  width: 10%;
-  vertical-align: middle;
-  margin: 0 1%;
+  transition: all 300ms ease-in;
+  transform: translate3d(0, 20px, 0);
 }
 
 #about {
-  /**background-attachment: scroll;
-  background-image: url(../img/about.jpg);
+  padding: 30vh 0 10vh 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  /*&:after{
+      content: '';
+     width:100px;
+     border-bottom: 1px solid lightgray; 
+     height: 20px;
+     position: relative;
+     display: block;
+  }*/
+  /* text-align: center;
+  background-attachment: scroll;
+  background-image: url(../img/michaelong-portrait.jpg);
   background-position: center center;
   background-repeat: none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;**/
-  background: rgba(0, 0, 0, 0.05);
-  padding: 100px 0;
+  -o-background-size: cover;
+  min-height: 150px;
+  max-height: 100vh;
+  background-color: black;*/
 }
-#about p {
-  text-align: justify;
-  width: 80%;
-  margin: 20px auto;
-  line-height: 2;
+#about img {
+  width: 50%;
+  height: auto;
 }
-
-@media (max-width: 600px) {
-  #mini-about {
-    font-size: 20px;
-  }
-  #mini-about p {
-    text-align: center;
-    width: 90%;
-    line-height: 2.8;
-    padding: 15vw 0;
-  }
-  #mini-about p strong {
-    font-size: 38px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1.6;
-  }
+#about article {
+  padding: 20px 50px;
+  position: absolute;
+  width: 60%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  margin-top: 20%;
 }
-#contact {
-  /**background-attachment: scroll;
-  background-image: url(../img/contact.jpg);
-  background-position: center center;
-  background-repeat: none;
-  background-size: cover;
-  -o-background-size: cover;**/
-  background: rgba(0, 0, 0, 0.95);
-  color: white;
-  padding: 100px 0;
-}
-#contact p {
-  max-width: 400px;
-  margin: 0 auto;
-  line-height: 2;
-}
-#contact p a {
-  color: white;
-}
-
-#achievements {
-  margin-top: 2em;
-  padding: 0 33.3%;
-}
-#achievements figure {
-  float: none;
+#about article p {
   width: 100%;
-}
-#achievements figure p {
-  text-align: center !important;
-}
-
-#project {
-  padding: 150px 15%;
-  margin: 0 auto;
-  background-color: white;
-}
-#project h1 {
-  text-transform: uppercase;
-  font-size: 30px;
-  font-weight: 600;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-#project header {
-  padding-bottom: 50px;
-}
-#project header em {
-  text-align: left;
-  display: block;
-}
-#project header h2 {
-  text-transform: uppercase;
-  font-size: 30px;
-  margin: 0;
-}
-#project header h3 {
-  font-weight: normal;
-  font-size: 16px;
-  margin: 5px 0 40px 0;
-  font-family: "Lora", serif;
-  display: none;
-}
-#project header h4 {
-  margin-top: 40px;
-  font-weight: normal;
-  font-size: 16px;
-}
-#project header p {
-  font-family: "Lora", serif;
-  font-weight: normal;
-  line-height: 1.7;
-  font-style: italic;
-  margin: 40px 0 40px 0;
-  font-size: 20px;
-}
-#project article {
-  max-width: 1200px;
-  margin: 40px auto 0 auto;
-  font-size: 18px;
-}
-#project article h3 {
-  font-family: "Lora", serif;
-  font-weight: normal;
-  line-height: 1.7;
-  font-style: italic;
-}
-#project article h4 {
   text-align: left;
   font-size: 20px;
-  margin: 60px 0 16px 0;
-  line-height: 1.4;
-  color: #666;
-  font-weight: normal;
-  text-transform: uppercase;
-  border-bottom: 3px solid #ccc;
-}
-#project article p {
-  text-align: left;
-  margin: 0 0 30px 0;
-  line-height: 2;
-}
-#project article ul, #project article ol {
-  text-align: left;
-}
-#project article figure {
-  width: 100%;
-  margin: 60px auto;
-  padding: 0;
-}
-#project article figure.small {
-  max-width: 800px;
-}
-#project article figure img {
-  width: 100%;
-  background: #222;
-}
-#project article figure figcaption {
-  font-size: 14px;
-  padding: 5px;
-}
-#project article .four-col {
-  position: relative;
-  margin: 40px auto;
-  list-style: none;
-  text-align: center;
-  max-width: 1700px;
-  float: left;
-  width: 100%;
-}
-#project article .four-col figure {
-  position: relative;
-  float: left;
-  overflow: hidden;
-  width: 23%;
-  text-align: center;
-  cursor: pointer;
-  margin: 1%;
-}
-
-a button {
-  cursor: pointer;
-  margin: 40px auto 0 auto;
-  background: #222;
-  border: 2px solid #222;
-  text-transform: uppercase;
-  font-weight: normal;
-  padding: 10px 15px;
-  font-size: 16px;
-  color: white;
-  text-decoration: none;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  text-decoration: none;
-}
-a button span {
-  font-size: 43px;
-  line-height: 0;
-}
-a button:hover {
-  background: white;
-  color: #222;
-  text-decoration: none;
+  font-weight: 200;
+  line-height: 1.5;
 }
 
 footer {
@@ -741,8 +527,8 @@ footer {
   width: 100%;
   float: left;
   padding: 40px 0 10px 0;
-  font-size: 14px;
-  border-top: 1px solid #222;
+  font-size: 12px;
+  border-top: 1px dashed #cccccc;
 }
 footer ul {
   display: flex;
@@ -758,18 +544,57 @@ footer ul li {
 }
 footer ul li a {
   text-decoration: none;
-  color: #333;
+  color: #666;
   border: none;
 }
 footer ul li a:hover {
   color: #333;
 }
 footer p {
-  font-size: 14px;
-  line-height: 2;
+  font-size: 11px;
 }
 
+@media (max-width: 1600px) {
+  body {
+    padding: 0 24px 0 24px;
+  }
+  nav {
+    width: calc(100% - 48px);
+  }
+  #project {
+    padding: 150px 60px 150px 40px;
+  }
+  #work {
+    margin: 0;
+  }
+}
 @media (max-width: 1200px), (hover: none) {
+  .grid figure {
+    background: none;
+  }
+  .grid figure:hover img {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  .grid figure figcaption {
+    padding: 12px;
+    opacity: 1;
+    position: relative;
+    transition: none;
+    height: 9vw;
+  }
+  .grid figure h2,
+  .grid figure p {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: none;
+    color: black;
+    padding: 0;
+  }
+  .grid figure figcaption::before, .grid figure figcaption::after {
+    opacity: 1;
+    transform: scale(0);
+  }
   .readmore-target figure figcaption {
     height: 0;
     padding: 0;
@@ -782,17 +607,34 @@ footer p {
     padding: 12px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 800px), (hover: none) {
+  #about {
+    display: block;
+    position: relative;
+    padding-top: 50px;
+  }
+  #about img {
+    width: 100%;
+  }
+  #about article {
+    margin-top: 40px;
+    padding: 0;
+    width: 100%;
+    position: relative;
+  }
+}
+@media (max-width: 600px) {
   body {
     padding: 0;
   }
   nav {
     width: 100%;
     height: 50px;
-    padding: 0 8px 0 8px;
+    padding: 0 24px 0 24px;
   }
   nav a h1 {
-    margin: 12px 0 12px 4px;
+    font-size: 18px;
+    margin: 18px 10px 20px 10px;
   }
   nav .menu {
     position: absolute;
@@ -849,22 +691,7 @@ footer p {
     border-bottom: 0;
   }
   #about {
-    padding: 10vh 0 10vh 0;
-  }
-  #about p {
-    padding: 0 24px 16px 24px;
-    width: 95%;
-  }
-  #orgs img {
-    width: 20%;
-    margin: 0 2%;
-  }
-  .grid .codepen {
-    width: 95%;
-    margin: 2% 2.5%;
-  }
-  .grid .codepen h2 {
-    font-size: 20px;
+    padding: 20vh 0 30vh 0;
   }
   .grid figure {
     width: 100%;
@@ -874,7 +701,7 @@ footer p {
     height: 25vw;
   }
   .grid figure figcaption h2 {
-    font-size: 20px;
+    font-size: 6vw;
   }
   .grid figure figcaption p {
     font-size: 3vw;
@@ -906,23 +733,17 @@ footer p {
   #project article h4, #project article p {
     padding: 0;
   }
+  article header {
+    max-height: 100vh;
+    height: 100vh;
+  }
+  article header h2 {
+    padding: 40vh 5px 0 5px;
+  }
+  article header h2 span {
+    display: block;
+  }
   footer {
     padding: 40px 24px 10px 24px;
-  }
-}
-
-@media (max-width: 400px) {
-  #orgs img {
-    width: 30%;
-    margin: 3% 5%;
-  }
-  nav {
-    padding: 0 4px 0 4px;
-  }
-  nav a h1 {
-    margin: 12px 0 12px 4px;
-  }
-  nav a h1 span {
-    letter-spacing: -1px;
   }
 }/*# sourceMappingURL=style.css.map */
