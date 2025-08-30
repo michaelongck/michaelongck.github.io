@@ -663,13 +663,13 @@ footer p {
     margin-left: 0;
   }
   #gallery {
-    height: 1150vw;
+    height: 1100vw;
   }
   #gallery figure img {
     width: 30vw;
   }
   #editorial-article {
-    height: 170vw;
+    height: 230vw;
   }
   #editorial-article figure img {
     width: 45vw;
