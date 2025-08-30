@@ -296,7 +296,7 @@ article header h2 {
   margin: 0;
   font-weight: normal;
   font-style: italic;
-  color: #cccccc;
+  color: white;
 }
 
 #work {
@@ -350,21 +350,6 @@ article header h2 {
 }
 #gallery section figcaption {
   display: none;
-}
-
-#editorial-article {
-  margin-bottom: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 74vw;
-}
-#editorial-article section figcaption {
-  display: none;
-}
-#editorial-article figure img {
-  width: 30vw;
 }
 
 .grid {
@@ -542,6 +527,37 @@ article header h2 {
   line-height: 1.5;
 }
 
+#editorial {
+  padding-top: 40px;
+}
+
+#editorial-article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 74vw;
+}
+#editorial-article section figcaption {
+  display: none;
+}
+#editorial-article figure img {
+  width: 30vw;
+}
+
+#exhibitions {
+  padding-top: 40px;
+  margin-bottom: 80px;
+}
+#exhibitions ul {
+  margin-left: -40px;
+}
+#exhibitions ul li {
+  text-align: left;
+  list-style-type: none;
+  line-height: 1.5;
+}
+
 footer {
   display: block;
   width: 100%;
@@ -549,7 +565,7 @@ footer {
   padding: 10px 0 10px 0;
   margin-top: 60px;
   font-size: 12px;
-  border-top: 1px dashed #cccccc;
+  border-top: 1px dashed black;
 }
 footer ul {
   display: flex;
@@ -736,7 +752,7 @@ footer p {
     padding: 20vh 0 30vh 0;
   }
   #gallery {
-    height: 1050vw;
+    height: 1150vw;
   }
   #gallery figure img {
     width: 32vw;
