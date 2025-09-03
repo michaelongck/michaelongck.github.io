@@ -348,7 +348,7 @@ article header h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 400vw;
+  height: 470vw;
 }
 #gallery section figcaption {
   display: none;
@@ -538,7 +538,7 @@ article header h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 110vw;
+  height: 300vw;
 }
 #editorial-article section figcaption {
   display: none;
@@ -669,13 +669,13 @@ footer p {
     margin-left: 0;
   }
   #gallery {
-    height: 1100vw;
+    height: 1280vw;
   }
   #gallery figure img {
     width: 30vw;
   }
   #editorial-article {
-    height: 240vw;
+    height: 640vw;
   }
   #editorial-article figure img {
     width: 45vw;
@@ -767,7 +767,7 @@ footer p {
     padding: 0 4px;
   }
   #gallery {
-    height: 1180vw;
+    height: 1380vw;
   }
   #gallery figure img {
     width: 32vw;
